@@ -164,7 +164,7 @@ struct Baton {
 void AsyncWaitForReady(uv_work_t *req) {
   Baton* baton = static_cast<Baton*>(req->data);
 
-  // This function currently only returns 0 (success) so I won't bother
+  // This function currently only returns 0 (success) so we don't bother
   // handling errors.
   etherdream_wait_for_ready(baton->ed);
 }
