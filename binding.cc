@@ -124,11 +124,11 @@ Handle<Value> Etherdream::Write(const Arguments& args) {
   HandleScope scope;
 
   if (args.Length() < 3)
-    return ThrowError("Wrong number of arguments.");
+    return ThrowError("Function requires 3 arguments");
 
   Local<Object> ptsObj = Local<Object>::Cast(args[0]);
   if (!ptsObj->HasIndexedPropertiesInExternalArrayData())
-    return ThrowError("Points data must be an ArrayBuffer.");
+    return ThrowTypeError("Points data must be an ArrayBuffer");
 
   int ptsSize = SizeOfArrayElementForType(
       ptsObj->GetIndexedPropertiesExternalArrayDataType());
