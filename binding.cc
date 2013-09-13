@@ -67,6 +67,7 @@ protected:
 
   static Handle<Value> New(const Arguments& args);
   static Handle<Value> Connect(const Arguments& args);
+  static Handle<Value> Disconnect(const Arguments& args);
   static Handle<Value> Write(const Arguments& args);
   static Handle<Value> IsReady(const Arguments& args);
   static Handle<Value> WhenReady(const Arguments& args);
@@ -92,6 +93,7 @@ void Etherdream::Init(Handle<Object> target) {
   constructor->SetClassName(name);
 
   NODE_SET_PROTOTYPE_METHOD(constructor, "connect", Connect);
+  NODE_SET_PROTOTYPE_METHOD(constructor, "disconnect", Disconnect);
   NODE_SET_PROTOTYPE_METHOD(constructor, "write", Write);
   NODE_SET_PROTOTYPE_METHOD(constructor, "isReady", IsReady);
   NODE_SET_PROTOTYPE_METHOD(constructor, "whenReady", WhenReady);
@@ -118,6 +120,13 @@ Handle<Value> Etherdream::Connect(const Arguments& args) {
   Etherdream* self = ObjectWrap::Unwrap<Etherdream>(args.This());
   int res = etherdream_connect(self->ed);
   return scope.Close(Integer::New(res));
+}
+
+Handle<Value> Etherdream::Disconnect(const Arguments& args) {
+  HandleScope scope;
+  Etherdream* self = ObjectWrap::Unwrap<Etherdream>(args.This());
+  etherdream_disconnect(self->ed);
+  return Undefined();
 }
 
 Handle<Value> Etherdream::Write(const Arguments& args) {
