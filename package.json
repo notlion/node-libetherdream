@@ -1,0 +1,20 @@
+{
+  "name": "ether-dream",
+  "version": "0.0.0",
+  "description": "libetherdream bindings for Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "node-gyp rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/notlion/ether-dream.git"
+  },
+  "author": "Ryan Alexander",
+  "license": "GPLv2 / GPLv3 / LGPLv3",
+  "gypfile": true,
+  "bugs": {
+    "url": "https://github.com/notlion/ether-dream/issues"
+  }
+}
