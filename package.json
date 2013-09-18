@@ -1,5 +1,5 @@
 {
-  "name": "ether-dream",
+  "name": "libetherdream",
   "version": "0.0.0",
   "description": "libetherdream bindings for Node.js",
   "main": "index.js",
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/notlion/ether-dream.git"
+    "url": "git://github.com/notlion/node-libetherdream.git"
   },
   "author": "Ryan Alexander",
   "license": "GPLv2 / GPLv3 / LGPLv3",
   "gypfile": true,
   "bugs": {
-    "url": "https://github.com/notlion/ether-dream/issues"
+    "url": "https://github.com/notlion/node-libetherdream/issues"
   }
 }
